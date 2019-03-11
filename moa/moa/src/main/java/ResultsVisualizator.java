@@ -55,7 +55,7 @@ public class ResultsVisualizator extends JFrame{
 	    customizeChart(chart);
 	    
 	    // saves the chart as an image files
-	    File imageFile = new File("grafici/" + mean + "_" + var + ".png");
+	    File imageFile = new File("plots/" + mean + "_" + var + ".png");
 	    int width = 1500;
 	    int height = 500;
 	    

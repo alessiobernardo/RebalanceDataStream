@@ -137,8 +137,8 @@ public class BenchmarkManager {
 	    
 	    double[][] RebalanceStreamBaseMatrix = new double[5][4];
 		double[][] FinalBaseMatrix = new double[5][4];
-	    int riga = 0;
-	    int colonna = 0;
+	    int row = 0;
+	    int col = 0;
 
 	    ConfigurationGenerator cg = new ConfigurationGenerator();
 		DatasetGenerator dg = new DatasetGenerator();
@@ -252,15 +252,15 @@ public class BenchmarkManager {
 	    	levelMax = verticalMean.get(2);	        	
 	    	
 	    	// matrix creation
-	    	RebalanceStreamBaseMatrix[riga][colonna] = createValueMatrix(baseMean,rebalanceStreamMean);
-	    	FinalBaseMatrix[riga][colonna] = createValueMatrix(baseMean,finalMean);
+	    	RebalanceStreamBaseMatrix[row][col] = createValueMatrix(baseMean,rebalanceStreamMean);
+	    	FinalBaseMatrix[row][col] = createValueMatrix(baseMean,finalMean);
 			
-			if (colonna == 3) {
-	    		riga ++;
-	    		colonna = 0;
+			if (col == 3) {
+	    		row ++;
+	    		col = 0;
 	    	}
 	    	else {
-	    		colonna ++;
+	    		col ++;
 	    	}	   
 	    	
 	    	
@@ -293,12 +293,12 @@ public class BenchmarkManager {
 		}
 
 		//print and create heatmap base-RebalanceStream
-		printMatrix(RebalanceStreamBaseMatrix,"Base-RebalanceStream");
-		new HeatmapGenerator(RebalanceStreamBaseMatrix,"Base-RebalanceStream");
+		printMatrix(RebalanceStreamBaseMatrix,"RebalanceStream-Base");
+		new HeatmapGenerator(RebalanceStreamBaseMatrix,"RebalanceStream-Base");
 
 		//print and create heatmap base-final
-		printMatrix(FinalBaseMatrix,"Base-Final");
-		new HeatmapGenerator(FinalBaseMatrix,"Base-Final");
+		printMatrix(FinalBaseMatrix,"Final-Base");
+		new HeatmapGenerator(FinalBaseMatrix,"Final-Base");
 		
 	}
 	

@@ -32,7 +32,7 @@ public class HeatmapGenerator extends ApplicationFrame{
 		
         final JFreeChart chart = createChart(matrix,title);
         
-        String dest = "grafici/heatMap-" + title + ".png";               
+        String dest = "plots/heatMap-" + title + ".png";               
         File imageFile = new File(dest);
 	    int width = 1500;
 	    int height = 500;
