@@ -47,10 +47,16 @@ public class ResultsVisualizator extends JFrame{
 		String chartTitle = "K statistic graph";
 	    String xAxisLabel = "N elements";
 	    String yAxisLabel = "K statistic T";
+		
+//		String chartTitle = "";
+//	    String xAxisLabel = "";
+//	    String yAxisLabel = "";
 	    
 	    XYDataset dataset = createDataset(rebalanceStreamActualResults,baseActualResults,finalActualResults,levelActualResults);
 	    								 	    
 	    JFreeChart chart = ChartFactory.createXYLineChart(chartTitle,xAxisLabel, yAxisLabel, dataset, PlotOrientation.VERTICAL, true, false, false);
+	    
+	    //chart.removeLegend();	 
 	    
 	    customizeChart(chart);
 	    
@@ -76,8 +82,8 @@ public class ResultsVisualizator extends JFrame{
 		
 	    YIntervalSeries series1 = new YIntervalSeries("Base");
 	    YIntervalSeries series2 = new YIntervalSeries("RebalanceStream");
-	    YIntervalSeries series3 = new YIntervalSeries("Final");
-	    YIntervalSeries series4 = new YIntervalSeries("Unbalancement level");
+	    YIntervalSeries series3 = new YIntervalSeries("RebalanceStreamPlus");
+	    YIntervalSeries series4 = new YIntervalSeries("Imbalance level");
 	   
 		for (int i = 0; i < rebalanceStreamActualResults.get(0).size(); i++) {
 			series1.add((i + 1) * 2000, baseActualResults.get(0).get(i), baseActualResults.get(1).get(i), baseActualResults.get(2).get(i));
@@ -98,7 +104,7 @@ public class ResultsVisualizator extends JFrame{
 	}
 
 	// here we make some customization
-	private void customizeChart(JFreeChart chart) {   
+	private void customizeChart(JFreeChart chart) {  
 	    XYPlot plot = chart.getXYPlot();
 	    XYErrorRenderer renderer = new XYErrorRenderer();
 	    
@@ -109,8 +115,11 @@ public class ResultsVisualizator extends JFrame{
 	    ValueAxis rangeAxis = plot.getRangeAxis();
 	    rangeAxis.setRange(-0.20, 1.05);
 	    ((NumberAxis) rangeAxis).setTickUnit(new NumberTickUnit(0.05));
-	    	    
-	
+	    
+//	    rangeAxis.setVisible(false);
+//	    ValueAxis domain = plot.getDomainAxis();
+//	    domain.setVisible(false);
+	    
 	    // sets paint color for each series
 	    renderer.setSeriesPaint(0, Color.RED);
 	    renderer.setSeriesPaint(1, Color.BLACK);

@@ -31,7 +31,7 @@ public class BenchmarkManager {
 	private static void printMatrix(double[][] matrix, String title) {
 		
 		//PRINT matrix
-	    try(FileWriter fw = new FileWriter("grafici/model.txt", true);
+	    try(FileWriter fw = new FileWriter("plots/model.txt", true);
 	    	BufferedWriter bw = new BufferedWriter(fw)) {	  						 
 		  	
 		  	bw.write("*** MATRIX " + title + " ***\n");
@@ -53,7 +53,7 @@ public class BenchmarkManager {
 		
 		ArrayList<Double> stream = new ArrayList<Double>();
 		
-		try(FileWriter fw = new FileWriter("grafici/model.txt", true);
+		try(FileWriter fw = new FileWriter("plots/model.txt", true);
 			BufferedWriter bw = new BufferedWriter(fw)) {
 				
 				bw.write("*** Mean: " + mean + ", Variance: " + var +" ***\n");				
@@ -297,8 +297,8 @@ public class BenchmarkManager {
 		new HeatmapGenerator(RebalanceStreamBaseMatrix,"RebalanceStream-Base");
 
 		//print and create heatmap base-final
-		printMatrix(FinalBaseMatrix,"Final-Base");
-		new HeatmapGenerator(FinalBaseMatrix,"Final-Base");
+		printMatrix(FinalBaseMatrix,"RebalanceStreamPlus-Base");
+		new HeatmapGenerator(FinalBaseMatrix,"RebalanceStreamPlus-Base");
 		
 	}
 	

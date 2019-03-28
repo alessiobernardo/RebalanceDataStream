@@ -42,6 +42,14 @@ public class HeatmapGenerator extends ApplicationFrame{
 	    } catch (IOException ex) {
 	        System.err.println(ex);
 	    }
+	    
+	    dest = "plots/heatMap-" + title + "_min.png";               
+        imageFile = new File(dest);
+	    try {
+	        ChartUtilities.saveChartAsPNG(imageFile,chart, 750, height);
+	    } catch (IOException ex) {
+	        System.err.println(ex);
+	    }
         
 	}
 	
@@ -52,7 +60,7 @@ public class HeatmapGenerator extends ApplicationFrame{
 		int[] v = {50,100,200,400};
 		
 		XYZDataset dataset = new XYZArrayDataset(matrix);
-    	String t = "HeatMap" + title;
+    	String t = "HeatMap " + title;
     	    	
     	//x-axis -> row matrix
     	String labelsX[] = new String[5];
