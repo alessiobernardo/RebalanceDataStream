@@ -14,7 +14,7 @@ In order to compare the 4 learners, I calculate the prequential evaluation k-sta
 
 This algorithm is compared to its **Base version**. Both use the *SWT classifier with ARF as base learner*. For each algorithm, every 2,000 data, I save the prequential evaluation k-statistic and I use the validation set to validate the model, saving at the end its k-statistic results. At the and I have 2 sets of results for each algorithm.
 
-# Final Algorithm
+# RebalanceStream+ Algorithm
 
 Starting from these results I also propose a new synthetic algorithm. I create a new set of results: for each element of the prequential evaluation results, if prequential evaluation of the base version algorithm is better than the prequential evaluation of proposed one, I take the result on validation set of the base version algorithm, otherwise I take the other one. In this way I should grant the best result every time.
 
@@ -31,4 +31,6 @@ In order to run the code, after having cloned the repository, you must import th
 
 Search the *BenchmarkManager* class in moa/src/defaulpackage and run it. All the plots will be saved in the *plots* folder.
 
+
+For more information, please refer to my thesis (https://www.politesi.polimi.it/bitstream/10589/145564/3/2019_04_Bernardo.pdf)
 
