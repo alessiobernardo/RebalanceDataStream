@@ -148,25 +148,6 @@ public class RebalanceStreamAlgorithm {
 		}
 	}
 	
-
-	private static Instances createRandomInstances() {
-		ArrayList<Attribute> atts = new ArrayList<Attribute>();
-		ArrayList<String> label = new ArrayList<String>();
-	
-		for (int i = 1; i < 11; i ++) {
-			atts.add(new Attribute("att" + i));
-    	
-			if (i < 3) {
-				label.add(Integer.toString(i-1));
-			}
-    	
-		}
-		atts.add(new Attribute("label",label));
-   
-		Instances data = new Instances("BatchBalance",atts,0);
-		return data;
-	}
-	
 	public ArrayList<ArrayList<Double>> run(InstancesHeader header, Instances trainingDataSet, Instances validationDataSet) throws Exception{
 		
 		ArrayList<ArrayList<Double>> valToReturn = new ArrayList<ArrayList<Double>>();
@@ -342,8 +323,8 @@ public class RebalanceStreamAlgorithm {
                 k = (double)(accuracy - pc) / (double)(1 - pc);
                 kStatLearner = k;                                
                 
-                //batchBal from batch
-                batchBal = createRandomInstances();                    
+                //batchBal from batch               
+                batchBal = samoaToWeka.wekaInstancesInformation(batch.get(0).dataset());
                 for (int l = 0; l < batch.size(); l ++) {
                 	batchBal.add(samoaToWeka.wekaInstance(batch.get(l)));                    	
                 }
@@ -420,8 +401,8 @@ public class RebalanceStreamAlgorithm {
             		kStatBal = -1;
             	}
 
-                //resetBatchBal from resetBatch
-                resetBatchBal = createRandomInstances();                    
+                //resetBatchBal from resetBatch                
+                resetBatchBal = samoaToWeka.wekaInstancesInformation(resetBatch.get(0).dataset());
                 for (int l = 0; l < resetBatch.size(); l ++) {
                 	resetBatchBal.add(samoaToWeka.wekaInstance(resetBatch.get(l)));                    	
                 }
