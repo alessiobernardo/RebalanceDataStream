@@ -35,7 +35,7 @@ Search the *BenchmarkManager* class in moa/src/defaulpackage and run it. All the
 
 Currently, the [RebalanceDataStream](https://github.com/Waikato/moa/blob/master/moa/src/main/java/moa/classifiers/meta/imbalanced/RebalanceStream.java) is included in the official MOA repository. If this work was useful for you, please feel free to cite us with the format below.
 
----
+```
 @INPROCEEDINGS{9346536,
   author={Bernardo, Alessio and della Valle, Emanuele and Bifet, Albert},
   booktitle={2020 International Conference on Data Mining Workshops (ICDMW)}, 
@@ -45,7 +45,7 @@ Currently, the [RebalanceDataStream](https://github.com/Waikato/moa/blob/master/
   number={},
   pages={844-850},
   doi={10.1109/ICDMW51313.2020.00121}}
----
+```
 
 
 For more information, please refer to my thesis (https://www.politesi.polimi.it/bitstream/10589/145564/3/2019_04_Bernardo.pdf)
