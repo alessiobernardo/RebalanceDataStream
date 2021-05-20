@@ -37,7 +37,7 @@ Currently, the [RebalanceDataStream](https://github.com/Waikato/moa/blob/master/
 
 ```
 @INPROCEEDINGS{9346536,
-  author={Bernardo, Alessio and della Valle, Emanuele and Bifet, Albert},
+  author={Bernardo, Alessio and {Della Valle}, Emanuele and Bifet, Albert},
   booktitle={2020 International Conference on Data Mining Workshops (ICDMW)}, 
   title={Incremental Rebalancing Learning on Evolving Data Streams}, 
   year={2020},
