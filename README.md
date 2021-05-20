@@ -48,5 +48,5 @@ Currently, the [RebalanceDataStream](https://github.com/Waikato/moa/blob/master/
 ```
 
 
-For more information, please refer to my thesis (https://www.politesi.polimi.it/bitstream/10589/145564/3/2019_04_Bernardo.pdf)
+For more information, please refer to my [thesis](https://www.politesi.polimi.it/bitstream/10589/145564/3/2019_04_Bernardo.pdf)
 
